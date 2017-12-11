@@ -40,19 +40,56 @@
 
 //-----------------------------Reverse String------------------------
 
-function reverseString(str) {
-  if (str === '') {
-    return '';
+// function reverseString(str) {
+//   if (str === '') {
+//     return '';
+//   }
+//   const newChar = str[str.length-1];
+//   return newChar + reverseString(str.slice(0,str.length-1));
+// }
+
+// function iterativeReverseString(str) {
+//   return str.split('').reverse().join('');
+// }
+
+
+
+// console.log(reverseString('hello'));
+// console.log(iterativeReverseString('hello'));
+
+//--------------------------------nth Triangular Number--------------------------
+
+// function triangularNum(n) {
+//   if(n === 1) {
+//     return 1;
+//   }
+//   return n + triangularNum(n-1);
+// }
+
+// console.log(triangularNum(7));
+
+
+// function iterativeTriangularNum(n) {
+//   let total = 0;
+//   for(let i = 0; i <= n; i++) {
+//     total += i;
+//     console.log(total);
+//   }
+// }
+
+// iterativeTriangularNum(7);
+
+function stringSplitter(str, sep=0) {
+  if (str.length === 0) {
+    return str;
   }
-  const newChar = str[str.length-1];
-  return newChar + reverseString(str.slice(0,str.length-1));
+  if(sep<0) {
+    return false;
+  }
+  const char = str.charAt(0);
+  if(char === '/') {
+    sep++;
+  }
+
 }
-
-function iterativeReverseString(str) {
-  return str.split('').reverse().join('');
-}
-
-
-
-console.log(reverseString('hello'));
-console.log(iterativeReverseString('hello'));
+  

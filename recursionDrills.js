@@ -79,17 +79,59 @@
 
 // iterativeTriangularNum(7);
 
-function stringSplitter(str, sep=0) {
-  if (str.length === 0) {
-    return str;
-  }
-  if(sep<0) {
-    return false;
-  }
-  const char = str.charAt(0);
-  if(char === '/') {
-    sep++;
+//--------------------------------------stringSpliter----------------------------------
+// function stringSplitter(str, sep) {
+//   //base case
+//   if (str.length === 0) {
+//     return str;
+//   }
+//   //recursive case
+//   const newChar = str[0];
+//   if (newChar === sep) {
+//     return stringSplitter(str.slice(1), sep);
+//   }
+//   return newChar + stringSplitter(str.slice(1), sep);
+// }
+
+// console.log(stringSplitter('a/b/c', '/'));
+
+// function iterativeSplit(str, sep) {
+//     return str.split('/').join('');
+// }
+
+// console.log(iterativeSplit('a/b/c'));
+
+// //------------------------------------------Binary Representation------------------------
+
+// function binaryRepresentation(num) {
+//   //base case
+//   if (num <= 0) {
+//     return '';
+//   }
+//   //recursive case
+//   const mod = (num%2);
+//   return binaryRepresentation(Math.floor(num/2)) + mod;
+// }
+// console.log(binaryRepresentation(25));
+
+//---------------------------------Anagrams-----------------------
+
+function anagrams(prefix, str) {
+  //base case
+  if (str.length <= 1) {
+     console.log(prefix+str);
   }
 
+  for (let i = 0; i < str.length; i++) {
+      let current = str.substring(i, i+1);
+      let previous = str.substring(0, i);
+      let after = str.substring(i + 1);
+      anagrams(prefix + current, previous + after);
+  }
+  
 }
+
+console.log(anagrams('', 'east'));
+
+
   

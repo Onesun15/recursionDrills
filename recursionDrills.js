@@ -179,6 +179,8 @@
 // console.log(fibonacci(7));
 
 
+//-------------------------------------------------------FB Hierarchy-----------------------------------------
+
 const FaceBookHierarchy = [
   { id: 'Zuckerberg', Parent: null },
   { id: 'Schroepfer', Parent: 'Zuckerberg' },
@@ -226,4 +228,4 @@ function traverse(FaceBookHierarchy, parent) {
   );
   return node;
 }
-console.log(JSON.stringify(traverse(FaceBookHierarchy, null), null, 2));
+console.log(JSON.stringify(traverse(FaceBookHierarchy, null), null, 4));

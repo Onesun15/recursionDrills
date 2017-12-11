@@ -52,8 +52,6 @@
 //   return str.split('').reverse().join('');
 // }
 
-
-
 // console.log(reverseString('hello'));
 // console.log(iterativeReverseString('hello'));
 
@@ -67,7 +65,6 @@
 // }
 
 // console.log(triangularNum(7));
-
 
 // function iterativeTriangularNum(n) {
 //   let total = 0;
@@ -116,22 +113,117 @@
 
 //---------------------------------Anagrams-----------------------
 
-function anagrams(prefix, str) {
-  //base case
-  if (str.length <= 1) {
-     console.log(prefix+str);
-  }
+// function anagrams(prefix, str) {
+//   //base case
+//   if (str.length <= 1) {
+//     console.log(prefix + str);
+//   }
 
-  for (let i = 0; i < str.length; i++) {
-      let current = str.substring(i, i+1);
-      let previous = str.substring(0, i);
-      let after = str.substring(i + 1);
-      anagrams(prefix + current, previous + after);
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     let current = str.substring(i, i + 1);
+//     let previous = str.substring(0, i);
+//     let after = str.substring(i + 1);
+//     anagrams(prefix + current, previous + after);
+//   }
+// }
+
+// console.log(anagrams('', 'east'));
+
+
+//----------------------------------------------Animals Hierarchy----------------------------
+// const AnimalHierarchy = [
+//   { id: 'Animals', Parent: null },
+//   { id: 'Mammals', Parent: 'Animals' },
+//   { id: 'Dogs', Parent: 'Mammals' },
+//   { id: 'Cats', Parent: 'Mammals' },
+//   { id: 'Golden Retriever', Parent: 'Dogs' },
+//   { id: 'Husky', Parent: 'Dogs' },
+//   { id: 'Bengal', Parent: 'Cats' }
+// ];
+
+// // ==============================
+// function traverse(AnimalHierarchy, parent) {
+//   let node = {};
+//   AnimalHierarchy.filter(item => item.Parent === parent).forEach(
+//     item => (node[item.id] = traverse(AnimalHierarchy, item.id))
+//   );
+//   return node;
+// }
+// console.log(JSON.stringify(traverse(AnimalHierarchy, null), null, 2));
+
+
+//----------------------------------------------------Factorial-------------------------------------
+
+// function factorial(n) {
+//   if(n === 0) {
+//     return 1;
+//   }
+//   return n*factorial(n-1);
+// }
+
+// console.log(factorial(3));
+
+
+//-------------------------------------------------------Fibonacci-----------------------------------------
+
+// function fibonacci(n) {
+//   if (n === 0) {
+//     return 0;
+//   }
+//   if(n === 1) {
+//     return 1;
+//   }
+//   return fibonacci(n-2) + fibonacci(n-1);
+// }
+
+// console.log(fibonacci(7));
+
+
+const FaceBookHierarchy = [
+  { id: 'Zuckerberg', Parent: null },
+  { id: 'Schroepfer', Parent: 'Zuckerberg' },
+  { id: 'Bosworth', Parent: 'Schroepfer' },
+  { id: 'Steve', Parent: 'Bosworth' },
+  { id: 'Kyle', Parent: 'Bosworth' },
+  { id: 'Steve', Parent: 'Bosworth' },
+  { id: 'Zhao', Parent: 'Schroepfer' },
+  { id: 'Richie', Parent: 'Zhao' },
+  { id: 'Sofia', Parent: 'Zhao' },
+  { id: 'Jen', Parent: 'Zhao' },
+  { id: 'Schrage', Parent: 'Zuckerberg' },
+  { id: 'VanDyck', Parent: 'Schrage' },
+  { id: 'Sabrina', Parent: 'VanDyck' },
+  { id: 'Michelle', Parent: 'VanDyck' },
+  { id: 'Josh', Parent: 'VanDyck' },
+  { id: 'Swain', Parent: 'Schrage' },
+  { id: 'Blanch', Parent: 'Swain' },
+  { id: 'Tom', Parent: 'Swain' },
+  { id: 'Joe', Parent: 'Swain' },
+  { id: 'Sandberg', Parent: 'Zuckerberg' },
+  { id: 'Goler', Parent: 'Sandberg' },
+  { id: 'Eddie', Parent: 'Goler' },
+  { id: 'Julie', Parent: 'Goler' },
+  { id: 'Annie', Parent: 'Goler' },
+  { id: 'Hernandez', Parent: 'Sandberg' },
+  { id: 'Rowi', Parent: 'Hernandez' },
+  { id: 'Inga', Parent: 'Hernandez' },
+  { id: 'Morgan', Parent: 'Hernandez' },
+  { id: 'Moissinac', Parent: 'Sandberg' },
+  { id: 'Amy', Parent: 'Moissinac' },
+  { id: 'Chuck', Parent: 'Moissinac' },
+  { id: 'Vinni', Parent: 'Moissinac' },
+  { id: 'Kelley', Parent: 'Sandberg' },
+  { id: 'Eric', Parent: 'Kelley' },
+  { id: 'Ana', Parent: 'Kelley' },
+  { id: 'Wes', Parent: 'Kelley' },
   
+];
+
+function traverse(FaceBookHierarchy, parent) {
+  let node = {};
+  FaceBookHierarchy.filter(item => item.Parent === parent).forEach(
+    item => (node[item.id] = traverse(FaceBookHierarchy, item.id))
+  );
+  return node;
 }
-
-console.log(anagrams('', 'east'));
-
-
-  
+console.log(JSON.stringify(traverse(FaceBookHierarchy, null), null, 2));

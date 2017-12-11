@@ -187,7 +187,7 @@ const FaceBookHierarchy = [
   { id: 'Bosworth', Parent: 'Schroepfer' },
   { id: 'Steve', Parent: 'Bosworth' },
   { id: 'Kyle', Parent: 'Bosworth' },
-  { id: 'Steve', Parent: 'Bosworth' },
+  { id: 'Andra', Parent: 'Bosworth' },
   { id: 'Zhao', Parent: 'Schroepfer' },
   { id: 'Richie', Parent: 'Zhao' },
   { id: 'Sofia', Parent: 'Zhao' },
